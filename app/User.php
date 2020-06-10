@@ -33,15 +33,12 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+//    protected $casts = [
+//        'email_verified_at' => 'datetime',
+//    ];
     public function questions(){
         return $this->hasMany(Question::Class);
         
     }
-    public function setTitleAttributes($value){
-        $this->attributes['title'] = $value;
-        $this->attributes['slug'] = str_slug($value);
-    }
+    
 }
